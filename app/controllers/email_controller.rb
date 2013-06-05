@@ -22,9 +22,11 @@ class EmailController < ApplicationController
         from = fromAddress                
       end
       
-      response = SendgridMailer.email(to, from, subject, body).deliver
-      #binding.pry      
-      
+      begin
+        response = SendgridMailer.email(to, from, subject, body).deliver
+      rescue Exception=>e
+        logger.debug "Send email failed: #{e}"
+      end
     end    
   end
 end
