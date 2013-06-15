@@ -1,78 +1,77 @@
-<html>
-  <head>
-    <title>Sendgrid E-mail</title>
-  </head>
+<div class="container">
+  <div class="row-fluid">
+    <div class="well">
+      <%= form_tag({}, :class => "form-horizontal") do %>          
+    
+        <fieldset>
+          <legend class = "legend">
+            <div class = "title">E-mail</div>
+            <div class = "sendgrid-logo">
+              <%= image_tag("sendgrid_logo.png") %>
+            </div>
+          </legend>
+          
+          <div class="control-group<%= @error %>">
+            <div class="alert alert-error">
+              <button data-dismiss="alert" class="close" type="button">&times;</button>
+              <%= @e %>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <%= label_tag(:toAddress, "To:", :class => "control-label") %>
+            <div class="controls">
+              <%= text_field_tag "toAddress", "#{@toAddress}", :placeholder => "John Doe <john.doe@example.com>", :class => "input-xxlarge" %>
+            </div>
+          </div>
 
-  <body>
-    <div class="container">
-      <div class="row-fluid">
-        <div class="well">
-          <%= form_tag({}, :class => "form-horizontal") do %>          
-        
-            <fieldset>
-              <legend class = "legend">
-                <div class = "title">E-mail</div>
-                <div class = "sendgrid-logo">
-                  <%= image_tag("sendgrid_logo.png") %>
-                </div>
-              </legend>
-              
-              <div class="control-group">
-                <%= label_tag(:toName, "To Name:", :class => "control-label") %>
-                <div class="controls">
-                  <%= text_field_tag("toName", "") %>
-                </div>
-              </div>
+          <div class="control-group">
+            <%= label_tag(:ccAddress, "CC:", :class => "control-label") %>
+            <div class="controls">
+              <%= text_field_tag "ccAddress", "#{@ccAddress}", :placeholder => "John Doe <john.doe@example.com>", :class => "input-xxlarge" %>
+            </div>
+          </div>
 
-              <div class="control-group">
-                <%= label_tag(:toAddress, "To:", :class => "control-label") %>
-                <div class="controls">
-                  <%= text_field_tag("toAddress", "") %>
-                </div>
-              </div>
+          <div class="control-group">
+            <%= label_tag(:bccAddress, "BCC:", :class => "control-label") %>
+            <div class="controls">
+              <%= text_field_tag "bccAddress", "#{@bccAddress}", :placeholder => "John Doe <john.doe@example.com>", :class => "input-xxlarge" %>
+            </div>
+          </div>
 
-              <div class="control-group">
-                <%= label_tag(:fromName, "From Name:", :class => "control-label") %>
-                <div class="controls">
-                  <%= text_field_tag("fromName", "") %>
-                </div>
-              </div>
+          <div class="control-group">
+            <%= label_tag(:fromAddress, "From:", :class => "control-label") %>
+            <div class="controls">
+              <%= text_field_tag "fromAddress", "#{@fromAddress}", :placeholder => "John Doe <john.doe@example.com>", :class => "input-xxlarge" %>
+            </div>
+          </div>
 
-              <div class="control-group">
-                <%= label_tag(:fromAddress, "From Address:", :class => "control-label") %>
-                <div class="controls">
-                  <%= text_field_tag("fromAddress", "") %>
-                </div>
-              </div>
+          <div class="control-group">
+            <%= label_tag(:subject, "Subject:", :class => "control-label") %>
+            <div class="controls">
+              <%= text_field_tag "subject", "#{@subject}", :class => "input-xxlarge" %>
+            </div>
+          </div>
 
-              <div class="control-group">
-                <%= label_tag(:subject, "Subject:", :class => "control-label") %>
-                <div class="controls">
-                  <%= text_field_tag("subject", "") %>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <%= label_tag(:body, "Message:", :class => "control-label") %>
-                <div class="controls">
-                  <%= text_area_tag(:body) %>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <%= submit_tag("Send") %>
-              </div>
-            </fieldset>
-          <% end %>
-        </div>
-
-        <div class="row-fluid">
-          <p class="text-info"></p>
-        </div>
-
-      </div>
+          <div class="control-group">
+            <%= label_tag(:body, "Message:", :class => "control-label") %>
+            <div class="controls">
+              <%= text_area_tag :body, "#{@body}", :class => "input-xxlarge" %>
+            </div>
+          </div>
+          
+          <div class="control-group controls">
+            <%= button_tag(:type => "submit", :class => "btn btn-primary") do -%>
+              <%= content_tag :i, :class =>"icon-envelope icon-white" do -%>
+              <% end -%> Send
+            <% end -%>
+            <%= button_tag(:type => "reset", :class => "btn btn-warning") do -%>
+              <%= content_tag :i, :class =>"icon-remove icon-white" do -%>
+              <% end -%> Reset
+            <% end -%>
+          </div>
+        </fieldset>
+      <% end %>
     </div>
-
-    <div id='msgbox' title='' style='display:none'></div>
-  </body>
-</html>
+  </div>
+</div>
