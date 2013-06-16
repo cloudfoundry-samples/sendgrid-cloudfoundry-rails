@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-SendgridCloudfoundryRails::Application.config.secret_token = '17447b671fbc4d487863df44a8194133d74e29f149b5e99c23be3d6b30acef1fa04ebcd983e82e28d56f4ce9a88d3457bb17044b18e28934755c110e47de9f55'
+Cf::Application.config.secret_token = 'a1bbda849286db55ac1ad2aa5b8a67db90ca9db92df47067c46e8dc822c90218882bbe0bb0f6d73624d1f6e3750615f73e33207ede40c7960fa7b1f36743725f'
