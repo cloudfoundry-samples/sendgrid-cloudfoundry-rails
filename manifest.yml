@@ -1,0 +1,13 @@
+---
+applications:
+- name: sendgrid-cloudfoundry-rails
+  memory: 512M
+  instances: 1
+  url: sendgrid-cloudfoundry-rails.${target-base}
+  path: .
+  services:
+    spring-sendgrid:
+      label: sendgrid-dev
+      provider: sendgrid
+      version: n/a
+      plan: free
