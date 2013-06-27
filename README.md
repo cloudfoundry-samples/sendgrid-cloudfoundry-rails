@@ -2,7 +2,7 @@ sendgrid-cloudfoundry-rails
 ===========================
 
 
-A sample application for using Spring Framework and [SendGrid](http://www.sendgrid.com) on
+A sample application for using Ruby on Rails Framework and [SendGrid](http://www.sendgrid.com) on
 [Cloud Foundry](http://www.cloudfoundry.com).
 
 ## Running the application on Cloud Foundry
