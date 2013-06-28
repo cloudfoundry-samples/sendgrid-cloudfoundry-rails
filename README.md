@@ -12,8 +12,8 @@ targeting a Cloud Foundry instance, and logging in, the application can be pushe
 
 ~~~
 $ git clone https://github.com/laur-craciun/sendgrid-cloudfoundry-rails.git
-$ $ cd sendgrid-cloudfoundry-rails
-$ cf push sendgrid-cloudfoundry-rails
+$ cd sendgrid-cloudfoundry-rails
+$ cf push
 ~~~
 
 If prompted to create a service for your app, select `y` and choose the SendGrid service. This will provision an
