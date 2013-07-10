@@ -10,7 +10,7 @@ if !ENV['VCAP_SERVICES'].blank?
   JSON.parse(ENV['VCAP_SERVICES']).each do |k,v|
     if !k.scan("sendgrid").blank? 
       credentials = v.first.select {|k1,v1| k1 == "credentials"}["credentials"]
-      host = credentials["smtp_host"]
+      host = credentials["hostname"]
       username = credentials["username"]
       password = credentials["password"]
     end

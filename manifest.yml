@@ -1,13 +1,14 @@
 ---
 applications:
-- name: sendgrid-cloudfoundry-rails
+- name: sendgrid-rails
   memory: 512M
   instances: 1
-  url: sendgrid-cloudfoundry-rails.${target-base}
+  host: sendgrid-rails-${random-word}
+  domain: cfapps.io
   path: .
   services:
-    spring-sendgrid:
-      label: sendgrid-dev
+    sendgrid-rails:
+      label: sendgrid
       provider: sendgrid
       version: n/a
       plan: free
