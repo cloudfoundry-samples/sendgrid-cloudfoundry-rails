@@ -7,7 +7,7 @@ applications:
   domain: cfapps.io
   path: .
   services:
-    sendgrid-rails:
+    sendgrid:
       label: sendgrid
       provider: sendgrid
       version: n/a
