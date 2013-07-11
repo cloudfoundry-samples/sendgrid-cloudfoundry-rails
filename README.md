@@ -11,7 +11,7 @@ After installing in the 'cf' [command-line interface for Cloud Foundry](http://d
 targeting a Cloud Foundry instance, and logging in, the application can be pushed using these commands:
 
 ~~~
-$ git clone https://github.com/laur-craciun/sendgrid-cloudfoundry-rails.git
+$ git clone https://github.com/cloudfoundry-samples/sendgrid-cloudfoundry-rails.git
 $ cd sendgrid-cloudfoundry-rails
 $ cf push
 ~~~
@@ -20,8 +20,21 @@ If prompted to create a service for your app, select `y` and choose the SendGrid
 account on SendGrid and bind it to your app, which stores credentials for the account in the VCAP_SERVICES environment
 variable. This application will read those credentials and use them when it sends e-mails.
 
-Once the app is uploaded and finishes staging, you can browse to the URL
-`http://sendgrid-cloudfoundry-rails.<cloud-foundry-domain>/`.
+The application will be pushed using settings in the provided `manifest.yml` file. The settings include some random 
+characters in the host to make sure the URL for the app is unique in the Cloud Foundry environment. Once the app is 
+uploaded and finishes staging, run the following command to see the URL that was assigned:
+
+~~~
+$ cf app
+Using manifest file manifest.yml
+
+sendgrid-rails: running
+  usage: 512M × 1 instance
+  urls: sendgrid-rails-7acab.cfapps.io
+  services: sendgrid
+~~~
+
+Using the provided URL in the `urls` field displayed, you can browse to the running application. 
 
 You can override the SendGrid credentials in the environment by configuring them in the file
 `config/environment.rb`.
